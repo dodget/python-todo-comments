@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
+import argparse
 import io
+import os
 from pathlib import Path
 import tokenize
 import sys
@@ -29,14 +31,20 @@ def todo_list(directory):
         search_file_for_todos(path)
 
 
-def main(args=sys.argv) -> int:
-    for dir in args:
-        try:
-            todo_list(dir)
-        except Exception as e:
-            sys.stderr.write(str(e))
+def parse_args(args):
+    parser = argparse.ArgumentParser(description='A command to get the todos out of python modules')
+    parser.add_argument('--dir', nargs='?', default=os.getcwd(), help='The directory to search for todos')
+    return parser.parse_args(args)
+
+
+def main(args=sys.argv[1:]) -> int:
+    arguments = parse_args(args)
+    try:
+        todo_list(arguments.dir)
+    except Exception as e:
+        sys.stderr.write(str(e))
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(sys.argv[1:]))
