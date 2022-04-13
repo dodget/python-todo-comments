@@ -5,10 +5,11 @@ description = ""
 authors = ["Tylor Dodge <tdodge@nexamp.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+tox = "^3.25.0"
 
 [tool.poetry.scripts]
 py-todos = "python_todo_comments.main:main"
