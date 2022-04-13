@@ -33,7 +33,7 @@ def todo_list(directory):
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description='A command to get the todos out of python modules')
-    parser.add_argument('--dir', nargs='?', default=os.getcwd(), help='The directory to search for todos')
+    parser.add_argument('-d', '--dir', nargs='?', default=os.getcwd(), help='The directory to search for todos')
     return parser.parse_args(args)
 
 
