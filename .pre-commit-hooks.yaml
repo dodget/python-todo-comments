@@ -1,5 +1,5 @@
-id: python-todo-comments
-name: Python TODO comments
-description: Finds all TODO comments in a directory's python modules.
-entry: py-todos > todos.md
-language: python
+- id: python-todo-comments
+  name: Python TODO comments
+  description: Finds all TODO comments in a directory's python modules.
+  entry: py-todos > todos.md
+  language: python
