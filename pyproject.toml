@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-todo-comments"
-version = "0.2.3"
+version = "0.2.5"
 description = "A cli that will search for and parse TODO comments in a directory's python modules."
 authors = ["Tylor Dodge <tdodge@nexamp.com>"]
 license = "MIT"

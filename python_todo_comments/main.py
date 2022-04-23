@@ -21,6 +21,7 @@ def search_file_for_todos(path):
                     todos.append((comment_content, line_number))
         if len(todos) > 0:
             print(f"### {path}")
+            print()
             for todo in todos:
                 print(f"- {todo[1]}: {todo[0]}")
             print()
@@ -33,7 +34,7 @@ def todo_list(directory):
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description='A command to get the todos out of python modules')
-    parser.add_argument('-d', '--dir', nargs='?', default=os.getcwd(), help='The directory to search for todos')
+    parser.add_argument('-d', '--dir', nargs='?', default=".", help='The directory to search for todos')
     return parser.parse_args(args)
 
 
