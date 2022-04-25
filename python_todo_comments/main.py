@@ -3,7 +3,6 @@
 import argparse
 from contextlib import redirect_stdout
 import io
-import os
 from pathlib import Path
 import tokenize
 import sys
@@ -18,8 +17,7 @@ def search_file_for_todos(path):
             if toknum is tokenize.COMMENT:
                 if tokstring.startswith("# TODO: "):
                     comment_content = tokstring.replace("# TODO: ", "")
-                    line_number = tokloc[0]
-                    todos.append(f"- {line_number}: {comment_content}\n")
+                    todos.append(f"- {tokloc[0]}: {comment_content}\n")
         if len(todos) > 1:
             todos.append("\n")
             return todos
