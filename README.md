@@ -18,4 +18,5 @@ The basic command is `py-todos` combined with the following arguments:
 
 - No argument: will search and parse the current working directory
 - `-d` or `--dir` will search and parse the directory provided
+- `-o` or `--output` will write the output to the provided filename
 - `-h` or `--help` will provide the command's help context
