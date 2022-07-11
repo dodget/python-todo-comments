@@ -5,11 +5,11 @@ from python_todo_comments.main import main
 
 
 def test_version():
-    assert __version__ == '0.2.6'
+    assert __version__ == '0.3.0'
 
 
 def test_main(capsys):
     main(args=["--dir", "./tests/"])
     captured = capsys.readouterr()
-    expected_out = "### tests/test_python_todo_comments.py\n\n- 4: test comment\n\n"
-    assert captured.out == expected_out
+    expected_out = "## tests (1)\n1. test_python_todo_comments.py:4    test comment\n\n"
+    assert expected_out in captured.out
